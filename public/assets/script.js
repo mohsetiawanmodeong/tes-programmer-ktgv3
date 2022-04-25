@@ -42,7 +42,7 @@ const senggol = () => {
             const input = new FormData(formulir);
             postdata(api + '/', input)
                 .then(data => {
-                    showToast(data.message, data.error == 0 ? false : true);
+                    showToast(data.message, data.error == 1 ? false : true);
                 })
                 .catch((error) => {
                     showToast(error.message, true);

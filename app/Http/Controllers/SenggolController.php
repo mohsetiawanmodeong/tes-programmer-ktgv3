@@ -21,7 +21,7 @@ class SenggolController extends Controller
 
         //make response JSON
         return response()->json([
-            'success' => true,
+            'error' => true,
             'message' => 'Berikut Daftar Pasar Senggol',
             'data'    => $senggols
         ], 200);
@@ -40,7 +40,7 @@ class SenggolController extends Controller
 
         //make response JSON
         return response()->json([
-            'success' => true,
+            'error' => true,
             'message' => 'Detail Data Pasar Senggol',
             'data'    => $senggols
         ], 200);
@@ -56,11 +56,18 @@ class SenggolController extends Controller
     {
         //set validation
         $validator = Validator::make($request->all(), [
-            'nik'       => 'required',
+            'nik'       => 'required|unique:senggols',
             'nama'      => 'required',
             'alamat'    => 'required',
             'surel'     => 'required'
         ]);
+
+        if ($validator->fails('nik')) {
+            return response()->json([
+                'error' => false,
+                'message' => 'NIK Sudah Terdaftar',
+            ], 409);
+        }
 
         //response error validation
         if ($validator->fails()) {
@@ -79,7 +86,7 @@ class SenggolController extends Controller
         if ($senggols) {
 
             return response()->json([
-                'success' => true,
+                'error' => true,
                 'message' => 'Data Pasar Senggol Berhasil di Simpan',
                 'data'    => $senggols
             ], 201);
@@ -87,7 +94,7 @@ class SenggolController extends Controller
 
         //failed save to database
         return response()->json([
-            'success' => false,
+            'error' => false,
             'message' => 'Data Pasar Senggol Gagal di Simpan',
         ], 409);
     }
@@ -128,7 +135,7 @@ class SenggolController extends Controller
             ]);
 
             return response()->json([
-                'success' => true,
+                'error' => true,
                 'message' => 'Data Pasar Senggol Berhasil di Edit',
                 'data'    => $senggol
             ], 200);
@@ -136,7 +143,7 @@ class SenggolController extends Controller
 
         //data senggols not found
         return response()->json([
-            'success' => false,
+            'error' => false,
             'message' => 'Data Pasar Senggol Tidak di Temukan',
         ], 404);
     }
@@ -158,14 +165,14 @@ class SenggolController extends Controller
             $senggols->delete();
 
             return response()->json([
-                'success' => true,
+                'error' => true,
                 'message' => 'Data Pasar Senggol Berhasil di Hapus',
             ], 200);
         }
 
         //data senggols not found
         return response()->json([
-            'success' => false,
+            'error' => false,
             'message' => 'Data Pasar Senggol Tidak di Temukan',
         ], 404);
     }
