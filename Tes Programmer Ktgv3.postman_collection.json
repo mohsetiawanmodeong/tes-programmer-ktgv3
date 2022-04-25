@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "af09338d-c18c-4aec-82a4-a11ec5fdbf63",
+		"name": "Tes Programmer Ktgv3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/senggol",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"senggol"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Input",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nik",
+							"value": "7110021309990001",
+							"type": "text"
+						},
+						{
+							"key": "nama",
+							"value": "Uyo Modeong",
+							"type": "text"
+						},
+						{
+							"key": "alamat",
+							"value": "Buyat 2, Boltim",
+							"type": "text"
+						},
+						{
+							"key": "surel",
+							"value": "setiawan.modeong99@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/senggol",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"senggol"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail/Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/senggol/16",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"senggol",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nik",
+							"value": "7110021309990001",
+							"type": "text"
+						},
+						{
+							"key": "nama",
+							"value": "Wawan Modeong",
+							"type": "text"
+						},
+						{
+							"key": "alamat",
+							"value": "Manado",
+							"type": "text"
+						},
+						{
+							"key": "surel",
+							"value": "setiawan.modeong99@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/senggol/16",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"senggol",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/senggol/13",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"senggol",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

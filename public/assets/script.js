@@ -40,7 +40,7 @@ const senggol = () => {
             if (!formulir.setuju.checked) throw new Error("Anda belum setuju dengan syarat dan ketentuan.");
 
             const input = new FormData(formulir);
-            postdata(api + 'index.php/daftar', input)
+            postdata(api + '/', input)
                 .then(data => {
                     showToast(data.message, data.error == 0 ? false : true);
                 })
