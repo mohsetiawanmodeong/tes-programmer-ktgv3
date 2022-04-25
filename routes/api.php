@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * route resource senggol
+ */
+Route::resource('/senggol', SenggolController::class);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

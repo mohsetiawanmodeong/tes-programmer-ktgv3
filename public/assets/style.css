@@ -1,0 +1,28 @@
+* {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 10pt;
+}
+
+.content-header {
+    background-color: #001e6c;
+    color: #fff;
+    padding: 50px 10px;
+    text-align: center;
+}
+
+.content-breadcrumb {
+    background-color: #035397;
+    color: #fff;
+    padding: 10px;
+}
+
+.content-body {
+    background-color: #fff8f3;
+    color: #000;
+    padding: 10px;
+}
+
+.content-footer {
+    background-color: #ffeead;
+    padding: 10px;
+}
